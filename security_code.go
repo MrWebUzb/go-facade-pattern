@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type securityCode struct{ code int }
 
@@ -12,6 +15,6 @@ func (sc *securityCode) checkCode(code int) error {
 	if sc.code != code {
 		return fmt.Errorf("given %v code not matched", code)
 	}
-	fmt.Println("code matched")
+	log.Println("code matched")
 	return nil
 }
